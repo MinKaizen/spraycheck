@@ -1,0 +1,398 @@
+hopper-gun:
+  slug: hopper-gun
+  title: Hopper Gun
+  type: equipment
+  notes: ""
+  shops:
+    - colourtone
+
+wd-40:
+  slug: wd-40
+  title: WD40
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+compressor:
+  slug: compressor
+  title: Compressor
+  type: equipment
+  notes: ""
+  shops:
+    - sydney-tools
+
+air-hose:
+  slug: air-hose
+  title: Air Hose
+  type: equipment
+  notes: ""
+  shops:
+    - sydney-tools
+
+mixer:
+  slug: mixer
+  title: Mixer
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+tarp:
+  slug: tarp
+  title: Tarp
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+sealer-sticks:
+  slug: sealer-sticks
+  title: Sealer Sticks
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+water-hose:
+  slug: water-hose
+  title: Water Hose
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+water-hose-gun:
+  slug: water-hose-gun
+  title: Water Hose Gun
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+water-hose-attachment:
+  slug: water-hose-attachment
+  title: Water Hose Attachment
+  type: equipment
+  notes: "The thing that screws onto the actual tap. Some clients don't have it!"
+  shops:
+    - bunnings
+
+blower:
+  slug: blower
+  title: Blower
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+spare-batteries:
+  slug: spare-batteries
+  title: Spare Batteries
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+    - janbay
+
+battery-charger:
+  slug: battery-charger
+  title: Battery Charger
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+    - janbay
+
+broom:
+  slug: broom
+  title: Broom
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+sifter:
+  slug: sifter
+  title: Sifter
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - kmart
+
+electric-cables:
+  slug: electric-cables
+  title: Electric Cables
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+electric-junction-box:
+  slug: electric-junction-box
+  title: Electric Junction Box
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+pokers:
+  slug: pokers
+  title: Pokers
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+boards:
+  slug: boards
+  title: Boards
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+snail-blowers:
+  slug: snail-blowers
+  title: Snail Blowers
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+danger-tape:
+  slug: danger-tape
+  title: Danger Tape
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - kennards
+    - designer
+    - sic
+
+bags:
+  slug: bags
+  title: Bags
+  type: product
+  notes: ""
+  shops:
+    - colourtone
+    - designer
+
+oxide:
+  slug: oxide
+  title: Oxide
+  type: product
+  notes: ""
+  shops:
+    - colourtone
+    - designer
+
+bag-for-fleck:
+  slug: bag-for-fleck
+  title: Bag For Fleck
+  type: product
+  notes: ""
+  shops:
+    - colourtone
+    - designer
+
+oxide-for-fleck:
+  slug: oxide-for-fleck
+  title: Oxide For Fleck
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+    - janbay
+
+polymer:
+  slug: polymer
+  title: Polymer
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+
+spare-buckets:
+  slug: spare-buckets
+  title: Spare Buckets
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - designer
+    - sic
+
+sealer:
+  slug: sealer
+  title: Sealer
+  type: product
+  notes: ""
+  shops:
+    - colourtone
+    - designer
+
+sealer-frames:
+  slug: sealer-frames
+  title: Sealer Frames
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+    - apc
+    - sic
+
+lambswool:
+  slug: lambswool
+  title: Lambswool
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+
+brushes:
+  slug: brushes
+  title: Brushes
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+    - apc
+    - sic
+
+cloth-tape:
+  slug: cloth-tape
+  title: Cloth Tape
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - bulk-order
+
+masking-tape:
+  slug: masking-tape
+  title: Masking Tape
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+    - janbay
+    - sic
+
+brown-paper:
+  slug: brown-paper
+  title: Brown Paper
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - colourtone
+    - designer
+    - sic
+
+sealer-gloves:
+  slug: sealer-gloves
+  title: Sealer Gloves
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - designer
+    - sic
+    - bulk-order
+
+masks:
+  slug: masks
+  title: Masks
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - kennards
+    - sydney-tools
+
+vacuum:
+  slug: vacuum
+  title: Vacuum
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+    - hire
+
+vacuum-bags:
+  slug: vacuum-bags
+  title: Vacuum Bags
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+hand-grinder:
+  slug: hand-grinder
+  title: Hand Grinder
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+grinder:
+  slug: grinder
+  title: Grinder
+  type: equipment
+  notes: ""
+  shops:
+    - hire
+
+goggles:
+  slug: goggles
+  title: Goggles
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+    - kennards
+
+scissors:
+  slug: scissors
+  title: Scissors 
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+multi-tool:
+  slug: multi-tool
+  title: Multi Tool
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools

@@ -1,0 +1,164 @@
+epoxy:
+  required:
+    - grinder
+    - electric-cables
+    - electric-junction-box
+    - spare-buckets
+    - sealer-gloves
+    - sealer-frames
+    - measuring-cups
+    - sealer-sticks
+    - mixer
+    - spike-shoes
+    - blower
+    - tarp
+    - squeegee
+    - batteries
+    - battery-charger
+    - electric-cable
+    - electric-junction-box
+    - hand-grinder
+    - multi-tool
+    - epoxy-a
+    - epoxy-b
+    - thinner
+    - epoxy-sealer
+    - flakes
+    - big-lambswool-for-backrolling
+    - lambswool
+    - lambswool-for-epoxy-sealer
+    - brushes
+    - cloth-tape
+    - masking-tape
+    - brown-paper
+    - big-frame-for-backrolling
+    - putty
+    - putty-blades
+  optional: []
+
+resurfacing:
+  required:
+    - squeegee
+    - mixer
+    - tarp
+    - water-hose
+    - water-hose-gun
+    - mini-squeegees
+    - compressor
+    - air-hose-reel
+    - hopper-gun
+    - sifter
+    - metal-scoop
+    - snail-blowers
+    - electric-cable
+    - electric-junction-box
+    - hand-grinder
+    - masks
+    - vacuum
+    - vacuum-bags
+    - vacuum-hose
+    - vacuum-head
+    - bags
+    - oxide
+    - polymer
+    - spare-buckets
+    - cloth-tape
+    - masking-tape
+    - wd40
+    - brushes
+  optional: []
+
+grinding:
+  required:
+    - grinder
+    - scissors
+    - hand-grinder
+    - masks
+    - goggles
+    - vacuum
+    - vacuum-head
+    - vacuum-hose
+    - vacuum-bags
+    - blower
+    - battery-charger
+    - batteries
+    - electric-cable
+    - electric-junction-box
+  optional:
+    - line-cutter
+    - multi-tool
+
+sealing:
+  required:
+    - sealer-sticks
+    - blower
+    - battery-charger
+    - batteries
+    - broom
+    - electric-cable
+    - danger-tape
+    - sealer
+    - sealer-frames
+    - lambswool
+    - brushes
+    - sealer-gloves
+
+spray:
+  other-steps:
+    - washing
+    - grinding
+    - sealing
+  required:
+    - air-hose-reel
+    - hopper-gun
+    - wd40
+    - compressor
+    - mixer
+    - tarp
+    - water-hose
+    - water-hose-gun
+    - water-hose-tap-attachment
+    - blower
+    - battery-charger
+    - batteries
+    - broom
+    - sifter
+    - electric-cable
+    - electric-junction-box
+    - pokers
+    - danger-tape
+    - bags
+    - oxide
+    - bag-for-fleck
+    - oxide-for-fleck
+    - polymer
+    - spare-buckets
+    - cloth-tape
+    - masking-tape
+    - brown-paper
+  optional:
+    - hand-grinder
+    - multi-tool
+    - line-cutter
+    - snail-blowers
+    - xylene
+    - thinner
+    - boards
+
+washing:
+  required:
+    - pressure-washer-hose
+    - water-hose-gun
+    - pressure-washer
+    - water-hose
+    - water-hose-tap-attachment
+    - jerry-can
+    - swirly-wirly
+    - boots
+    - petrol
+  optional:
+    - soap
+    - acid
+    - snail-blowers
+    - squeegee
+    - boards
