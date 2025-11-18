@@ -1,4 +1,47 @@
-import { taskSchema, itemSchema, type Task, type Item } from "./schemas";
+import { shopSchema, taskSchema, itemSchema, type Shop, type Task, type Item } from "./schemas";
+
+describe("shopSchema", () => {
+  it("should validate kebab-case shop names", () => {
+    const validShops = [
+      "bunnings",
+      "sydney-tools",
+      "a",
+      "123",
+      "shop-1",
+      "my-shop-2000",
+      "abc-def-ghi-123",
+    ];
+
+    validShops.forEach((shop) => {
+      expect(() => shopSchema.parse(shop)).not.toThrow();
+    });
+  });
+
+  it("should fail with invalid shop names", () => {
+    const invalidShops = [
+      "Bunnings", // uppercase
+      "Sydney-Tools", // mixed case
+      "sydney_tools", // underscore
+      "sydney tools", // space
+      "sydney--tools", // double hyphen
+      "-sydney-tools", // starts with hyphen
+      "sydney-tools-", // ends with hyphen
+      "sydney.tools", // dot
+      "", // empty
+      "BUNNINGS", // all uppercase
+    ];
+
+    invalidShops.forEach((shop) => {
+      expect(() => shopSchema.parse(shop)).toThrow();
+    });
+  });
+
+  it("should return the validated shop string", () => {
+    const shop = "bunnings";
+    const result = shopSchema.parse(shop);
+    expect(result).toBe("bunnings");
+  });
+});
 
 describe("taskSchema", () => {
   it("should validate a task with only required fields", () => {
@@ -220,9 +263,37 @@ describe("itemSchema", () => {
     const result = itemSchema.parse(validItem);
     expect(result.shops).toEqual([]);
   });
+
+  it("should fail when shop names are not kebab-case", () => {
+    const invalidItem = {
+      slug: "multi-tool",
+      title: "Multi Tool",
+      type: "equipment" as const,
+      shops: ["Bunnings", "sydney-tools"], // First shop has uppercase
+    };
+
+    expect(() => itemSchema.parse(invalidItem)).toThrow();
+  });
+
+  it("should validate when all shop names are kebab-case", () => {
+    const validItem = {
+      slug: "multi-tool",
+      title: "Multi Tool",
+      type: "equipment" as const,
+      shops: ["bunnings", "sydney-tools", "mitre-10"],
+    };
+
+    const result = itemSchema.parse(validItem);
+    expect(result.shops).toEqual(["bunnings", "sydney-tools", "mitre-10"]);
+  });
 });
 
 describe("TypeScript types", () => {
+  it("should infer correct Shop type", () => {
+    const shop: Shop = "bunnings";
+    expect(shop).toBe("bunnings");
+  });
+
   it("should infer correct Task type", () => {
     const task: Task = {
       required: ["item1"],
