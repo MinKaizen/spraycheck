@@ -104,7 +104,7 @@ sealing:
     - sealer-gloves
 
 spray:
-  other-steps:
+  related-tasks:
     - washing
     - grinding
     - sealing
