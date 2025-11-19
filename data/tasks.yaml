@@ -141,6 +141,7 @@ spray:
     - xylene
     - thinner
     - boards
+    - boots
 
 washing:
   required:
