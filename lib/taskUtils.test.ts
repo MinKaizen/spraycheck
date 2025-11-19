@@ -70,4 +70,18 @@ describe('getConsolidatedItems', () => {
     const result = getConsolidatedItems(['t1'], tasksWithMissingItem, mockItems);
     expect(result).toEqual([]);
   });
+
+  it('should handle tasks with undefined optional array', () => {
+    const tasksWithUndefinedOptional: TaskData = {
+      taskWithoutOptional: {
+        required: ['item1', 'item2'],
+        optional: undefined as any
+      }
+    };
+    const result = getConsolidatedItems(['taskWithoutOptional'], tasksWithUndefinedOptional, mockItems);
+    
+    expect(result).toHaveLength(2);
+    expect(result.every(item => item.isRequired)).toBe(true);
+    expect(result.every(item => !item.isOptional)).toBe(true);
+  });
 });
