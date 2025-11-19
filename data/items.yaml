@@ -72,9 +72,9 @@ water-hose-gun:
   shops:
     - bunnings
 
-water-hose-attachment:
-  slug: water-hose-attachment
-  title: Water Hose Attachment
+water-hose-tap-attachment:
+  slug: water-hose-tap-attachment
+  title: Water Hose Tap Attachment
   type: equipment
   notes: "The thing that screws onto the actual tap. Some clients don't have it!"
   shops:
@@ -89,9 +89,9 @@ blower:
     - bunnings
     - sydney-tools
 
-spare-batteries:
-  slug: spare-batteries
-  title: Spare Batteries
+batteries:
+  slug: batteries
+  title: Batteries
   type: equipment
   notes: ""
   shops:
@@ -352,6 +352,24 @@ vacuum-bags:
     - bunnings
     - sydney-tools
 
+vacuum-hose:
+  slug: vacuum-hose
+  title: Vacuum Hose
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+vacuum-head:
+  slug: vacuum-head
+  title: Vacuum Head
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
 hand-grinder:
   slug: hand-grinder
   title: Hand Grinder
@@ -396,3 +414,228 @@ multi-tool:
   shops:
     - bunnings
     - sydney-tools
+
+line-cutter:
+  slug: line-cutter
+  title: Line Cutter
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+measuring-cups:
+  slug: measuring-cups
+  title: Measuring Cups
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - kmart
+
+xylene:
+  slug: xylene
+  title: Xylene
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - designer
+
+thinner:
+  slug: thinner
+  title: Thinner
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - apc
+    - sic
+
+squeegee:
+  slug: squeegee
+  title: Squeegee
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sic
+
+soap:
+  slug: soap
+  title: Soap
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+
+spike-shoes:
+  slug: spike-shoes
+  title: Spike Shoes
+  type: equipment
+  notes: ""
+  shops:
+    - apc
+
+acid:
+  slug: acid
+  title: Acid
+  type: product
+  notes: ""
+  shops:
+  - bunnings
+
+mini-squeegees:
+  slug: mini-squeegees
+  title: Mini Squeegees
+  type: equipment
+  notes: ""
+  shops:
+    - temu
+
+wd40:
+  slug: wd40
+  title: WD40
+  type: product
+  notes: "Alternative slug for wd-40"
+  shops:
+    - bunnings
+    - sydney-tools
+    - petrol-station
+
+epoxy-a:
+  slug: epoxy-a
+  title: Epoxy Part A
+  type: product
+  notes: ""
+  shops:
+    - sic
+    - apc
+
+epoxy-b:
+  slug: epoxy-b
+  title: Epoxy Part B
+  type: product
+  notes: ""
+  shops:
+    - sic
+    - apc
+
+epoxy-sealer:
+  slug: epoxy-sealer
+  title: Epoxy Sealer
+  type: product
+  notes: ""
+  shops:
+    - sic
+    - apc
+
+flakes:
+  slug: flakes
+  title: Flakes
+  type: product
+  notes: ""
+  shops:
+    - sic
+    - apc
+
+big-lambswool-for-backrolling:
+  slug: big-lambswool-for-backrolling
+  title: Big Lambswool For Backrolling
+  type: product
+  notes: ""
+  shops:
+    - sic
+    - apc
+
+lambswool-for-epoxy-sealer:
+  slug: lambswool-for-epoxy-sealer
+  title: Lambswool For Epoxy Sealer
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - sic
+    - apc
+
+big-frame-for-backrolling:
+  slug: big-frame-for-backrolling
+  title: Big Frame For Backrolling
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sic
+    - apc
+
+putty:
+  slug: putty
+  title: Putty
+  type: product
+  notes: ""
+  shops:
+    - bunnings
+    - sic
+    - apc
+
+putty-blades:
+  slug: putty-blades
+  title: Putty Blades
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sic
+    - apc
+
+pressure-washer-hose:
+  slug: pressure-washer-hose
+  title: Pressure Washer Hose
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+
+pressure-washer:
+  slug: pressure-washer
+  title: Pressure Washer
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - sydney-tools
+    - hire
+
+jerry-can:
+  slug: jerry-can
+  title: Jerry Can
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+    - petrol-station
+
+swirly-wirly:
+  slug: swirly-wirly
+  title: Swirly Wirly
+  type: equipment
+  notes: ""
+  shops:
+    - sydney-tools
+
+boots:
+  slug: boots
+  title: Boots
+  type: equipment
+  notes: ""
+  shops:
+    - bunnings
+
+petrol:
+  slug: petrol
+  title: Petrol
+  type: product
+  notes: ""
+  shops:
+    - petrol-station

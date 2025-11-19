@@ -2,7 +2,6 @@ epoxy:
   required:
     - grinder
     - electric-cables
-    - electric-junction-box
     - spare-buckets
     - sealer-gloves
     - sealer-frames
@@ -15,7 +14,7 @@ epoxy:
     - squeegee
     - batteries
     - battery-charger
-    - electric-cable
+    - electric-cables
     - electric-junction-box
     - hand-grinder
     - multi-tool
@@ -45,12 +44,11 @@ resurfacing:
     - water-hose-gun
     - mini-squeegees
     - compressor
-    - air-hose-reel
+    - air-hose
     - hopper-gun
     - sifter
-    - metal-scoop
     - snail-blowers
-    - electric-cable
+    - electric-cables
     - electric-junction-box
     - hand-grinder
     - masks
@@ -82,7 +80,7 @@ grinding:
     - blower
     - battery-charger
     - batteries
-    - electric-cable
+    - electric-cables
     - electric-junction-box
   optional:
     - line-cutter
@@ -95,7 +93,7 @@ sealing:
     - battery-charger
     - batteries
     - broom
-    - electric-cable
+    - electric-cables
     - danger-tape
     - sealer
     - sealer-frames
@@ -109,7 +107,7 @@ spray:
     - grinding
     - sealing
   required:
-    - air-hose-reel
+    - air-hose
     - hopper-gun
     - wd40
     - compressor
@@ -123,7 +121,7 @@ spray:
     - batteries
     - broom
     - sifter
-    - electric-cable
+    - electric-cables
     - electric-junction-box
     - pokers
     - danger-tape
