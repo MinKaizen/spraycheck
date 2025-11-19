@@ -48,10 +48,12 @@ describe('getConsolidatedItems', () => {
     
     const item1 = result.find(i => i.slug === 'item1');
     expect(item1?.isRequired).toBe(true);
+    expect(item1?.requiredByTasks).toEqual(['task1']);
     
     const item2 = result.find(i => i.slug === 'item2');
     expect(item2?.isRequired).toBe(false);
     expect(item2?.isOptional).toBe(true);
+    expect(item2?.optionalForTasks).toEqual(['task1']);
   });
 
   it('should mark item as required if it is required in one task but optional in another', () => {
@@ -61,6 +63,8 @@ describe('getConsolidatedItems', () => {
     const item2 = result.find(i => i.slug === 'item2');
     expect(item2?.isRequired).toBe(true);
     expect(item2?.isOptional).toBe(false);
+    expect(item2?.requiredByTasks).toEqual(['task2']);
+    expect(item2?.optionalForTasks).toEqual(['task1']);
   });
 
   it('should handle missing items gracefully', () => {

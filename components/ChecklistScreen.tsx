@@ -154,9 +154,11 @@ function ChecklistGroup({
                   {item.notes && (
                     <p className="text-sm text-gray-500 mt-1">{item.notes}</p>
                   )}
-                  {item.shops.length > 0 && (
-                    <p className="text-xs text-gray-400 mt-1">
-                      Available at: {item.shops.map(s => s.replace(/-/g, ' ')).join(', ')}
+                  {(item.requiredByTasks.length > 0 || item.optionalForTasks.length > 0) && (
+                    <p className="text-xs text-gray-400 mt-1.5">
+                      {[...item.requiredByTasks, ...item.optionalForTasks]
+                        .map(taskId => taskId.replace(/-/g, ' '))
+                        .join(', ')}
                     </p>
                   )}
                 </div>

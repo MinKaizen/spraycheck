@@ -20,22 +20,45 @@ export function getConsolidatedItems(
   allTasks: TaskData,
   allItems: ItemData
 ): ConsolidatedItem[] {
-  const itemMap = new Map<string, { required: boolean; optional: boolean }>();
+  const itemMap = new Map<string, { 
+    required: boolean; 
+    optional: boolean;
+    requiredByTasks: string[];
+    optionalForTasks: string[];
+  }>();
 
   selectedTaskIds.forEach(taskId => {
     const task = allTasks[taskId];
     if (!task) return;
 
     task.required.forEach(slug => {
-      const current = itemMap.get(slug) || { required: false, optional: false };
-      itemMap.set(slug, { ...current, required: true });
+      const current = itemMap.get(slug) || { 
+        required: false, 
+        optional: false,
+        requiredByTasks: [],
+        optionalForTasks: []
+      };
+      itemMap.set(slug, { 
+        ...current, 
+        required: true,
+        requiredByTasks: [...current.requiredByTasks, taskId]
+      });
     });
 
     const optional = task.optional || []
 
     optional.forEach(slug => {
-      const current = itemMap.get(slug) || { required: false, optional: false };
-      itemMap.set(slug, { ...current, optional: true });
+      const current = itemMap.get(slug) || { 
+        required: false, 
+        optional: false,
+        requiredByTasks: [],
+        optionalForTasks: []
+      };
+      itemMap.set(slug, { 
+        ...current, 
+        optional: true,
+        optionalForTasks: [...current.optionalForTasks, taskId]
+      });
     });
   });
 
@@ -51,6 +74,8 @@ export function getConsolidatedItems(
       ...itemDef,
       isRequired,
       isOptional: !isRequired && status.optional,
+      requiredByTasks: status.requiredByTasks,
+      optionalForTasks: status.optionalForTasks,
     };
   }).filter((item): item is ConsolidatedItem => item !== null);
 }

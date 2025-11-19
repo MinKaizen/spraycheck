@@ -18,6 +18,8 @@ export type ItemData = Record<string, Item>;
 export interface ConsolidatedItem extends Item {
   isRequired: boolean;
   isOptional: boolean;
+  requiredByTasks: string[];
+  optionalForTasks: string[];
 }
 
 export type AppScreen = 'TASKS' | 'RELATED' | 'CHECKLIST';
