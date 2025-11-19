@@ -31,7 +31,9 @@ export function getConsolidatedItems(
       itemMap.set(slug, { ...current, required: true });
     });
 
-    task.optional.forEach(slug => {
+    const optional = task.optional || []
+
+    optional.forEach(slug => {
       const current = itemMap.get(slug) || { required: false, optional: false };
       itemMap.set(slug, { ...current, optional: true });
     });
