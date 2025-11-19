@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Eye, EyeOff, RotateCcw } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ConfirmModal } from './ConfirmModal';
 
 interface Props {
   items: ConsolidatedItem[];
@@ -13,9 +14,14 @@ interface Props {
 
 export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Props) {
   const [showHidden, setShowHidden] = useState(true);
+  const [showResetModal, setShowResetModal] = useState(false);
 
   const equipment = items.filter(i => i.type === 'equipment');
   const products = items.filter(i => i.type === 'product');
+
+  const equipmentChecked = equipment.filter(i => checkedItems.includes(i.slug)).length;
+  const productsChecked = products.filter(i => checkedItems.includes(i.slug)).length;
+  const totalChecked = checkedItems.filter(slug => items.some(i => i.slug === slug)).length;
 
   return (
     <motion.div 
@@ -23,23 +29,32 @@ export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Prop
       animate={{ opacity: 1 }}
       className="space-y-8 pb-20"
     >
-      <div className="flex items-center justify-between sticky top-0 bg-white dark:bg-black z-10 py-4 border-b border-gray-100 dark:border-gray-800">
-        <h1 className="text-xl font-bold">Checklist</h1>
-        <div className="flex gap-2">
-          <button
-            onClick={() => setShowHidden(!showHidden)}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-            title={showHidden ? "Hide checked" : "Show checked"}
-          >
-            {showHidden ? <EyeOff size={20} /> : <Eye size={20} />}
-          </button>
-          <button
-            onClick={onReset}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-red-500"
-            title="Reset"
-          >
-            <RotateCcw size={20} />
-          </button>
+      <div className="sticky top-0 bg-white dark:bg-black z-10 py-4 border-b border-gray-100 dark:border-gray-800 space-y-3">
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-bold">Checklist</h1>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setShowHidden(!showHidden)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
+              title={showHidden ? "Hide checked" : "Show checked"}
+            >
+              {showHidden ? <EyeOff size={16} /> : <Eye size={16} />}
+              <span>Toggle Checked</span>
+            </button>
+            <button
+              onClick={() => setShowResetModal(true)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-red-500 text-sm"
+              title="Reset"
+            >
+              <RotateCcw size={16} />
+              <span>Reset</span>
+            </button>
+          </div>
+        </div>
+        <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
+          <span>Equipment: <span className="font-semibold text-black dark:text-white">{equipmentChecked}/{equipment.length}</span></span>
+          <span>Products: <span className="font-semibold text-black dark:text-white">{productsChecked}/{products.length}</span></span>
+          <span>Total: <span className="font-semibold text-black dark:text-white">{totalChecked}/{items.length}</span></span>
         </div>
       </div>
 
@@ -57,6 +72,19 @@ export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Prop
         checkedItems={checkedItems} 
         onToggle={onToggle} 
         showHidden={showHidden} 
+      />
+
+      <ConfirmModal
+        isOpen={showResetModal}
+        title="Reset Checklist?"
+        message="This will clear your task selection and all checked items. You'll need to select tasks again from the beginning."
+        confirmText="Reset"
+        cancelText="Cancel"
+        onConfirm={() => {
+          onReset();
+          setShowResetModal(false);
+        }}
+        onCancel={() => setShowResetModal(false)}
       />
     </motion.div>
   );
