@@ -4,12 +4,13 @@ import { TaskData, AppScreen } from '@/lib/types';
 import { getRelatedTasks } from '@/lib/taskUtils';
 
 export function useAppFlow(allTasks: TaskData) {
-  const [savedState, setSavedState] = useLocalStorage<{ selectedTasks: string[], checkedItems: string[] } | null>('spraycheck-state', null);
+  const [savedState, setSavedState] = useLocalStorage<{ selectedTasks: string[], checkedItems: string[], checklistName: string } | null>('spraycheck-state', null);
   
   const [screen, setScreen] = useState<AppScreen>('TASKS');
   const [selectedTasks, setSelectedTasks] = useState<string[]>([]);
   const [potentialRelatedTasks, setPotentialRelatedTasks] = useState<string[]>([]);
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const [checklistName, setChecklistName] = useState<string>('');
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Initialize from local storage
@@ -17,6 +18,7 @@ export function useAppFlow(allTasks: TaskData) {
     if (savedState) {
       setSelectedTasks(savedState.selectedTasks);
       setCheckedItems(savedState.checkedItems);
+      setChecklistName(savedState.checklistName);
       setScreen('CHECKLIST');
     }
     setIsInitialized(true);
@@ -29,18 +31,20 @@ export function useAppFlow(allTasks: TaskData) {
       setPotentialRelatedTasks(related);
       setScreen('RELATED');
     } else {
-      finalizeSelection(tasks);
+      setSelectedTasks(tasks);
+      setScreen('NAME');
     }
   };
 
   const handleRelatedSelection = (additionalTasks: string[]) => {
     const finalTasks = [...selectedTasks, ...additionalTasks];
-    finalizeSelection(finalTasks);
+    setSelectedTasks(finalTasks);
+    setScreen('NAME');
   };
 
-  const finalizeSelection = (tasks: string[]) => {
-    setSelectedTasks(tasks);
-    setSavedState({ selectedTasks: tasks, checkedItems: [] });
+  const handleNameSubmit = (name: string) => {
+    setChecklistName(name);
+    setSavedState({ selectedTasks, checkedItems: [], checklistName: name });
     setScreen('CHECKLIST');
   };
 
@@ -59,6 +63,7 @@ export function useAppFlow(allTasks: TaskData) {
     setSavedState(null);
     setSelectedTasks([]);
     setCheckedItems([]);
+    setChecklistName('');
     setScreen('TASKS');
   };
 
@@ -67,9 +72,11 @@ export function useAppFlow(allTasks: TaskData) {
     selectedTasks,
     potentialRelatedTasks,
     checkedItems,
+    checklistName,
     isInitialized,
     handleTaskSelection,
     handleRelatedSelection,
+    handleNameSubmit,
     toggleItemCheck,
     reset
   };

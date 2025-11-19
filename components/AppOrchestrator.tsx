@@ -4,6 +4,7 @@ import { TaskData, ItemData } from '@/lib/types';
 import { useAppFlow } from '@/hooks/useAppFlow';
 import { TaskSelectionScreen } from './TaskSelectionScreen';
 import { RelatedTaskSelectionScreen } from './RelatedTaskSelectionScreen';
+import { NameChecklistScreen } from './NameChecklistScreen';
 import { ChecklistScreen } from './ChecklistScreen';
 import { getConsolidatedItems } from '@/lib/taskUtils';
 import { AnimatePresence } from 'framer-motion';
@@ -19,9 +20,11 @@ export function AppOrchestrator({ allTasks, allItems }: Props) {
     selectedTasks,
     potentialRelatedTasks,
     checkedItems,
+    checklistName,
     isInitialized,
     handleTaskSelection,
     handleRelatedSelection,
+    handleNameSubmit,
     toggleItemCheck,
     reset
   } = useAppFlow(allTasks);
@@ -45,11 +48,18 @@ export function AppOrchestrator({ allTasks, allItems }: Props) {
             onConfirm={handleRelatedSelection} 
           />
         )}
+        {screen === 'NAME' && (
+          <NameChecklistScreen 
+            key="name"
+            onSubmit={handleNameSubmit} 
+          />
+        )}
         {screen === 'CHECKLIST' && (
           <ChecklistScreen 
             key="checklist"
             items={getConsolidatedItems(selectedTasks, allTasks, allItems)}
             checkedItems={checkedItems}
+            checklistName={checklistName}
             onToggle={toggleItemCheck}
             onReset={reset}
           />

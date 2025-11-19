@@ -22,10 +22,11 @@ export interface ConsolidatedItem extends Item {
   optionalForTasks: string[];
 }
 
-export type AppScreen = 'TASKS' | 'RELATED' | 'CHECKLIST';
+export type AppScreen = 'TASKS' | 'RELATED' | 'NAME' | 'CHECKLIST';
 
 export interface AppState {
   screen: AppScreen;
   selectedTasks: string[];
   checkedItems: string[];
+  checklistName: string;
 }

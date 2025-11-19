@@ -8,11 +8,12 @@ import { ConfirmModal } from './ConfirmModal';
 interface Props {
   items: ConsolidatedItem[];
   checkedItems: string[];
+  checklistName: string;
   onToggle: (slug: string) => void;
   onReset: () => void;
 }
 
-export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Props) {
+export function ChecklistScreen({ items, checkedItems, checklistName, onToggle, onReset }: Props) {
   const [showHidden, setShowHidden] = useState(true);
   const [showResetModal, setShowResetModal] = useState(false);
 
@@ -31,7 +32,7 @@ export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Prop
     >
       <div className="sticky top-0 bg-white dark:bg-black z-10 py-4 border-b border-gray-100 dark:border-gray-800 space-y-3">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">Checklist</h1>
+          <h1 className="text-xl font-bold">{checklistName}</h1>
           <div className="flex gap-2">
             <button
               onClick={() => setShowHidden(!showHidden)}

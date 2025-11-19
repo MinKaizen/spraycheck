@@ -39,14 +39,14 @@ describe('useAppFlow', () => {
     expect(result.current.potentialRelatedTasks).toEqual(['task2']);
   });
 
-  it('should navigate to CHECKLIST screen if no related tasks', () => {
+  it('should navigate to NAME screen if no related tasks', () => {
     const { result } = renderHook(() => useAppFlow(mockTasks));
     
     act(() => {
       result.current.handleTaskSelection(['task2']);
     });
 
-    expect(result.current.screen).toBe('CHECKLIST');
+    expect(result.current.screen).toBe('NAME');
     expect(result.current.selectedTasks).toEqual(['task2']);
   });
 
@@ -61,7 +61,7 @@ describe('useAppFlow', () => {
       result.current.handleRelatedSelection(['task2']);
     });
 
-    expect(result.current.screen).toBe('CHECKLIST');
+    expect(result.current.screen).toBe('NAME');
     expect(result.current.selectedTasks).toEqual(['task1', 'task2']);
   });
 
@@ -79,18 +79,38 @@ describe('useAppFlow', () => {
     expect(result.current.checkedItems).not.toContain('item1');
   });
 
-  it('should reset state', () => {
+  it('should handle name submission and navigate to checklist', () => {
     const { result } = renderHook(() => useAppFlow(mockTasks));
     
     act(() => {
       result.current.handleTaskSelection(['task2']);
     });
+    expect(result.current.screen).toBe('NAME');
+
+    act(() => {
+      result.current.handleNameSubmit('My Checklist');
+    });
     expect(result.current.screen).toBe('CHECKLIST');
+    expect(result.current.checklistName).toBe('My Checklist');
+  });
+
+  it('should reset state including checklist name', () => {
+    const { result } = renderHook(() => useAppFlow(mockTasks));
+    
+    act(() => {
+      result.current.handleTaskSelection(['task2']);
+    });
+    act(() => {
+      result.current.handleNameSubmit('My Checklist');
+    });
+    expect(result.current.screen).toBe('CHECKLIST');
+    expect(result.current.checklistName).toBe('My Checklist');
 
     act(() => {
       result.current.reset();
     });
     expect(result.current.screen).toBe('TASKS');
     expect(result.current.selectedTasks).toEqual([]);
+    expect(result.current.checklistName).toBe('');
   });
 });
