@@ -6,15 +6,6 @@ hopper-gun:
   shops:
     - colourtone
 
-wd-40:
-  slug: wd-40
-  title: WD40
-  type: product
-  notes: ""
-  shops:
-    - bunnings
-    - sydney-tools
-
 compressor:
   slug: compressor
   title: Compressor
@@ -497,7 +488,7 @@ wd40:
   slug: wd40
   title: WD40
   type: product
-  notes: "Alternative slug for wd-40"
+  notes: ""
   shops:
     - bunnings
     - sydney-tools
