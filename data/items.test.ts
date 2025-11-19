@@ -13,28 +13,40 @@ describe('items.yaml', () => {
 
   it('should have keys that match their item slugs', () => {
     Object.entries(items).forEach(([key, item]) => {
-      expect(key).toBe(item.slug);
+      if (key !== item.slug) {
+        throw new Error(`Item key "${key}" does not match its slug "${item.slug}"`);
+      }
     });
   });
 
   it('should not contain duplicate item keys', () => {
     const keys = Object.keys(items);
     const uniqueKeys = new Set(keys);
+    const duplicates = keys.filter((key, index) => keys.indexOf(key) !== index);
+    if (duplicates.length > 0) {
+      throw new Error(`Duplicate item keys found: ${[...new Set(duplicates)].join(', ')}`);
+    }
     expect(uniqueKeys.size).toBe(keys.length);
   });
 
   it('should contain only valid item objects', () => {
-    Object.values(items).forEach((item) => {
-      expect(() => itemSchema.parse(item)).not.toThrow();
+    Object.entries(items).forEach(([key, item]) => {
+      try {
+        itemSchema.parse(item);
+      } catch (error) {
+        throw new Error(`Item "${key}" is invalid: ${error instanceof Error ? error.message : 'validation failed'}`);
+      }
     });
   });
 
   it('should have all item shops exist in shops.yaml', () => {
     const shopSet = new Set(shops);
     
-    Object.entries(items).forEach(([_key, item]) => {
+    Object.entries(items).forEach(([key, item]) => {
       item.shops.forEach((shop) => {
-        expect(shopSet.has(shop)).toBe(true);
+        if (!shopSet.has(shop)) {
+          throw new Error(`Item "${key}" references shop "${shop}" that doesn't exist in shops.yaml`);
+        }
       });
     });
   });
@@ -42,13 +54,17 @@ describe('items.yaml', () => {
   it('should have all slugs in kebab-case format', () => {
     const kebabCaseRegex = /^[a-z0-9]+(-[a-z0-9]+)*$/;
     Object.values(items).forEach((item) => {
-      expect(item.slug).toMatch(kebabCaseRegex);
+      if (!kebabCaseRegex.test(item.slug)) {
+        throw new Error(`Item slug "${item.slug}" is not in kebab-case format`);
+      }
     });
   });
 
   it('should have valid type values', () => {
     Object.values(items).forEach((item) => {
-      expect(['product', 'equipment']).toContain(item.type);
+      if (!['product', 'equipment'].includes(item.type)) {
+        throw new Error(`Item "${item.slug}" has invalid type "${item.type}": must be "product" or "equipment"`);
+      }
     });
   });
 });
