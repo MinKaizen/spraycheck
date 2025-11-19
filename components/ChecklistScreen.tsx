@@ -31,8 +31,11 @@ export function ChecklistScreen({ items, checkedItems, checklistName, onToggle, 
       className="space-y-8 pb-20"
     >
       <div className="sticky top-0 bg-white dark:bg-black z-10 border-b border-gray-100 dark:border-gray-800 space-y-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between m-0">
           <h1 className="text-xl font-bold truncate ...">{checklistName}</h1>
+        </div>
+        <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400 items-center">
+          <span>Checked: <span className="font-semibold text-black dark:text-white">{totalChecked}/{items.length}</span></span>
           <div className="flex gap-2">
             <button
               onClick={() => setShowHidden(!showHidden)}
@@ -40,7 +43,7 @@ export function ChecklistScreen({ items, checkedItems, checklistName, onToggle, 
               title={showHidden ? "Hide checked" : "Show checked"}
             >
               {showHidden ? <EyeOff size={16} /> : <Eye size={16} />}
-              <span>Toggle Checked</span>
+              {showHidden ? <span>Hide Checked</span> : <span>Show Checked</span> }
             </button>
             <button
               onClick={() => setShowResetModal(true)}
@@ -51,11 +54,6 @@ export function ChecklistScreen({ items, checkedItems, checklistName, onToggle, 
               <span>Reset</span>
             </button>
           </div>
-        </div>
-        <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
-          <span>Equipment: <span className="font-semibold text-black dark:text-white">{equipmentChecked}/{equipment.length}</span></span>
-          <span>Products: <span className="font-semibold text-black dark:text-white">{productsChecked}/{products.length}</span></span>
-          <span>Total: <span className="font-semibold text-black dark:text-white">{totalChecked}/{items.length}</span></span>
         </div>
       </div>
 
