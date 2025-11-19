@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function ChecklistScreen({ items, checkedItems, onToggle, onReset }: Props) {
-  const [showHidden, setShowHidden] = useState(false);
+  const [showHidden, setShowHidden] = useState(true);
 
   const equipment = items.filter(i => i.type === 'equipment');
   const products = items.filter(i => i.type === 'product');
