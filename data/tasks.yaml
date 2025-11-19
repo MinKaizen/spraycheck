@@ -1,7 +1,6 @@
 epoxy:
   required:
     - grinder
-    - electric-cables
     - spare-buckets
     - sealer-gloves
     - sealer-frames
