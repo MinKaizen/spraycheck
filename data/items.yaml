@@ -213,7 +213,7 @@ polymer:
   slug: polymer
   title: Polymer
   type: product
-  notes: ""
+  notes: "Always buy extra cos priming uses up a lot"
   shops:
     - bunnings
     - colourtone
@@ -222,7 +222,7 @@ spare-buckets:
   slug: spare-buckets
   title: Spare Buckets
   type: product
-  notes: ""
+  notes: "Always buy extra. We need always need 3 ATLEAST"
   shops:
     - bunnings
     - designer
@@ -232,7 +232,7 @@ sealer:
   slug: sealer
   title: Sealer
   type: product
-  notes: ""
+  notes: "Always buy extra! Use 'VRX' (designer) or 'Hardcoat' (colourtone)"
   shops:
     - colourtone
     - designer
@@ -253,7 +253,7 @@ lambswool:
   slug: lambswool
   title: Lambswool
   type: product
-  notes: ""
+  notes: "Always use new ones"
   shops:
     - bunnings
     - colourtone
@@ -263,7 +263,7 @@ brushes:
   slug: brushes
   title: Brushes
   type: product
-  notes: ""
+  notes: "We use 75mm"
   shops:
     - bunnings
     - colourtone
@@ -275,7 +275,7 @@ cloth-tape:
   slug: cloth-tape
   title: Cloth Tape
   type: product
-  notes: ""
+  notes: "Ask Kevin to bulk order"
   shops:
     - bunnings
     - bulk-order
@@ -284,7 +284,7 @@ masking-tape:
   slug: masking-tape
   title: Masking Tape
   type: product
-  notes: ""
+  notes: "For indoor/garages, use green tape from Janbay so the paint doesn't rip off"
   shops:
     - bunnings
     - colourtone
@@ -307,7 +307,7 @@ sealer-gloves:
   slug: sealer-gloves
   title: Sealer Gloves
   type: product
-  notes: ""
+  notes: "Ask Kevin to bulk order"
   shops:
     - bunnings
     - designer
@@ -428,7 +428,7 @@ xylene:
   slug: xylene
   title: Xylene
   type: product
-  notes: ""
+  notes: "For fixing sealer spills"
   shops:
     - bunnings
     - designer
@@ -472,7 +472,7 @@ acid:
   slug: acid
   title: Acid
   type: product
-  notes: ""
+  notes: "Hydrochloric Acid"
   shops:
   - bunnings
 
@@ -480,7 +480,7 @@ mini-squeegees:
   slug: mini-squeegees
   title: Mini Squeegees
   type: equipment
-  notes: ""
+  notes: "Ask Martin to order form temu"
   shops:
     - temu
 
@@ -602,7 +602,7 @@ jerry-can:
   slug: jerry-can
   title: Jerry Can
   type: equipment
-  notes: ""
+  notes: "Also check that it is filled up"
   shops:
     - bunnings
     - petrol-station
